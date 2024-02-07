@@ -1,0 +1,133 @@
+/*
+https://flukeout.github.io/
+
+!X! means X will be ignored
+*/
+
+/* </plate> */
+plate {
+}
+
+/* </bento> */
+bento {
+}
+
+/* </plate id="fancy"> */
+#fancy {
+}
+
+/* <plate></apple></plate> */
+plate apple {
+}
+
+/* <plate id="fancy"></pickle></plate> */
+#fancy pickle {
+}
+
+/* </apple class="small"> */
+.small {
+}
+
+/* </orange class="small"> */
+orange.small {
+}
+
+/* <bento><orange class="small"></bento> */
+bento orange.small {
+}
+
+/* </plate></bento> */
+plate, bento {
+}
+
+/* </bento> </orange> </bento> </plate> */
+apple, orange, bento, plate {
+}
+
+/* All children: <plate></orange></bento></apple></plate> */
+plate * {
+}
+
+/* Next to: </plate></apple></plate></apple> !</apple></apple>! */
+plate + apple {
+}
+
+/* On one level: </bento></pickle></pickle> !<plate></pickle><plate>! */
+bento ~ pickle {
+}
+
+/* Direct child: <plate></apple></plate> !<plate><bento></apple></bento></plate>! */
+plate > apple {
+}
+
+/* First child: <plate></orange> !</orange></orange></plate>! */
+plate orange:first-child {
+}
+
+/* The only child: <plate></apple></plate><plate></pickle></plate> !<plate></orange></orange><plate>! */
+plate :only-child {
+}
+
+/* Last child: <plate><pickle class="small"></plate> <apple class="small"> */
+.small:last-child {
+}
+
+/* N-th child: !</plate></plate>! </plate> !</plate>! */
+plate:nth-child(3) {
+}
+
+/* N-th last child (N-th from the back): </bento> !</apple></bento>! */
+bento:nth-last-child(3) {
+}
+
+/* First of type: </apple> !</apple>! */
+apple:first-of-type {
+}
+
+/* N-th of type / even / odd: !</plate>! </plate> !</plate>! */
+plate:nth-of-type(even) {
+}
+
+/* N-th of type formula: elements starts from 3 with step 2 */
+plate:nth-of-type(2n+3) {
+}
+
+/* Only of type: elements that are the only ones of their type within of their parent */
+plate apple:only-of-type {
+}
+
+/* Last of type: !</orange>! </orange> !</apple>! </apple> */
+orange:last-of-type, apple:last-of-type {
+}
+
+/* Empty: </bento> !<bento></pickle></bento>! */
+bento:empty {
+}
+
+/* Negation: <apple> !<apple class="small">! */
+apple:not(.small) {
+}
+
+/* Attribute: </apple for="Alice"> !</apple>! */
+[for] {
+}
+
+/* Attribute #2: </plate for="Bob"> !</apple for="Alice">! */
+plate[for] {
+}
+
+/* Attribute value: </bento for="Vitaly"> !</bento for="Bob">! */
+bento[for="Vitaly"] {
+}
+
+/* Attribute starts with: </bento for="Sarah"></bento for="Sam"> */
+[for^="Sa"] {
+}
+
+/* Attribute ends with: </bento for="Hayato"></bento for="Minato"> */
+[for$="ato"] {
+}
+
+/* Attribute contains: </bento for="Robby"></bento for="Booby"> */
+bento[for*="obb"] {
+}
