@@ -1,0 +1,32 @@
+#game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#reset-button {
+    display: block;
+    margin: 50px auto;
+}
+
+#game-mode {
+    display: block;
+    margin: 20px auto;
+}
